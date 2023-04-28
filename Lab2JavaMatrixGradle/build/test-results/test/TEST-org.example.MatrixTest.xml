@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.MatrixTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2023-04-26T17:20:39" hostname="DESKTOP-VMPA2M7" time="0.041">
+  <properties/>
+  <testcase name="testAutoFill()" classname="org.example.MatrixTest" time="0.017"/>
+  <testcase name="testMatrixEquals()" classname="org.example.MatrixTest" time="0.003"/>
+  <testcase name="testMatrixCreationWithCopy()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testMatrixCreationWithSize()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testImmutableMatrixGetElementRowColumn()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testMatrixGetElementRowColumn()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testEmptyMatrixCreation()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testImmutableHashCode()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testToUpperTriangular()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testDiagonalMatricesFromVector()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testFillWithData()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testImmutableMatrixGetSize()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testMatrixGetSize()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testImmutableMatrixCreationWithArray()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testMatrixSetElement()" classname="org.example.MatrixTest" time="0.002"/>
+  <testcase name="testEmptyImmutableMatrixCreation()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="testHashCode()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testToLowerTriangular()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testImmutableMatrixEquals()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testImmutableMatrixCreationWithCopy()" classname="org.example.MatrixTest" time="0.0"/>
+  <testcase name="testImmutableMatrixCreationWithZero()" classname="org.example.MatrixTest" time="0.001"/>
+  <testcase name="MatrixInitialization()" classname="org.example.MatrixTest" time="0.0"/>
+  <system-out><![CDATA[-2.0 -12.0 
+3.0 -1.0 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
