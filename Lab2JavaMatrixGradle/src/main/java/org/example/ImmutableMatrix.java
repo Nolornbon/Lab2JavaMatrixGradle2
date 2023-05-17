@@ -1,7 +1,9 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class ImmutableMatrix {
 
@@ -72,6 +74,58 @@ public class ImmutableMatrix {
 
     public int getCols() {
         return cols;
+    }
+    
+    //Метод заповнення матриці значеннями з двовимірного масиву - створення нової матриці на базі незмінної
+    public ImmutableMatrix fillWithData(double[][] newData) {
+        if (newData.length == rows && newData[0].length == cols) {
+            double[][] dataCopy = new double[rows][cols];
+            for (int i = 0; i < rows; i++) {
+                System.arraycopy(newData[i], 0, dataCopy[i], 0, cols);
+            }
+            return new ImmutableMatrix(dataCopy);
+        } else {
+            throw new RuntimeException("Розмір переданого масиву не відповідає розміру матриці");
+        }
+
+    }
+
+    //Метод для встановлення значення елементу матриці - створення нової матриці на базі незмінної
+    public ImmutableMatrix setElement(int row, int col, double value) {
+        if (row >= 0 && row < rows && col >= 0 && col < cols) {
+            double[][] newData = new double[rows][cols];
+            for (int i = 0; i < rows; i++) {
+                System.arraycopy(data[i], 0, newData[i], 0, cols);
+            }
+            newData[row][col] = value;
+            return new ImmutableMatrix(newData);
+        } else {
+            throw new RuntimeException("Неприпустимі індекси рядка або стовпця");
+        }
+    }
+
+    //Метод заповнення матриці рандомними значеннями - створення нової матриці на базі незмінної
+    public ImmutableMatrix autoFill() {
+        double[][] newData = new double[rows][cols];
+        for(int i=0;i<rows;i++){
+            for (int j=0;j<cols;j++){
+                newData[i][j]=(int) (-20 + (Math.random() * 50));
+            }
+        }
+        return new ImmutableMatrix(newData);
+    }
+
+    //Метод ручного заповнення матриці- створення нової матриці на базі незмінної
+    public ImmutableMatrix manualFill() {
+        double[][] newData = new double[rows][cols];
+        Scanner sc=new Scanner(System.in).useLocale(Locale.US);
+        for(int i=0;i<rows;i++){
+            for (int j=0;j<cols;j++){
+                System.out.println("Будь ласка, введіть ["+i+"; "+j+"] елемент");
+                newData[i][j]=sc.nextDouble();
+            }
+        }
+        return new ImmutableMatrix(newData);
     }
 
     // Метод, що повертає значення заданого елемента матриці
