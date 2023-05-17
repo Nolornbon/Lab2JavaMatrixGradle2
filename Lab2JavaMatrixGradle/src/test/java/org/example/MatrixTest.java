@@ -164,6 +164,44 @@ public class MatrixTest {
         double[][] expectedData2 = {{1.1, 2.1}, {3.1, 4.1}};
         Assertions.assertArrayEquals(expectedData2, actualData2);
     }
+    //new
+    @Test
+    public void testImmutableMatrixSetElement() {
+        double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
+        ImmutableMatrix matrix = new ImmutableMatrix(data);
+        ImmutableMatrix newMatrix = matrix.setElement(0, 0, 900.0);
+        Assertions.assertEquals(900.0, newMatrix.getElement(0, 0));
+        Assertions.assertEquals(1.0, matrix.getElement(0, 0));
+        //       matrix.print();
+        //       newMatrix.print();
+    }
+    //new
+    @Test
+    public void testImmutableMatrixAutoFill() {
+        ImmutableMatrix matrix = new ImmutableMatrix(2, 2);
+        // Виклик методу autofill
+        ImmutableMatrix newMatrix = matrix.autoFill();
+        // Перевірка вмісту матриці після заповнення
+        matrix.print();
+        newMatrix.print();
+    }
+    //new
+    @Test
+    public void testImmutableMatrixFillWithData() {
+        double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
+        ImmutableMatrix matrix = new ImmutableMatrix(data);
+        double[][] dataNew = {{11.0, 12.0, 13.0}, {14.0, 15.0, 16.0}, {17.0, 18.0, 19.0}};
+        ImmutableMatrix matrix1 = matrix.fillWithData(dataNew);
+        Assertions.assertEquals(11.0, matrix1.getElement(0, 0));
+        Assertions.assertEquals(12.0, matrix1.getElement(0, 1));
+        Assertions.assertEquals(13.0, matrix1.getElement(0, 2));
+        Assertions.assertEquals(14.0, matrix1.getElement(1, 0));
+        Assertions.assertEquals(15.0, matrix1.getElement(1, 1));
+        Assertions.assertEquals(16.0, matrix1.getElement(1, 2));
+        Assertions.assertEquals(17.0, matrix1.getElement(2, 0));
+        Assertions.assertEquals(18.0, matrix1.getElement(2, 1));
+        Assertions.assertEquals(19.0, matrix1.getElement(2, 2));
+    }
 
     @Test
     public void testImmutableMatrixGetElementRowColumn() {
