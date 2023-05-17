@@ -79,20 +79,22 @@ public class Main {
         //ImmutableMatrix matrix = new ImmutableMatrix();// пуста або
         //ImmutableMatrix matrix = new ImmutableMatrix(2,2);// заповнена 0
 
-        //double[][] data = {{9.9,8.8},{7.7,6.6}};
+        //double[][] data = {{9.9,8.8},{7.7,6.6}}; //(1)
         //ImmutableMatrix matrix3 = new ImmutableMatrix(data); // створена з масиву
 
-        //Matrix matrix1 = new Matrix(2,2);
+        //(1)Створення з копії матриці Mutable, Immutable матрицю
 
-        //ImmutableMatrix matrix2 = new ImmutableMatrix(matrix1); // створена як копія змінної матриці
+        //Matrix matrix1 = new Matrix(2,2);//(1)
+        //matrix1.fillWithData(data);//(1)
+        //ImmutableMatrix matrix2 = new ImmutableMatrix(matrix1); //(1) створена як копія змінної матриці
 
         //ImmutableMatrix matrix = new ImmutableMatrix(matrix3); // створена як копія незмінної матриці
 
         //System.out.println(matrix1.getRows());
         //System.out.println(matrix1.getCols());
 
-        //matrix1.print();
-        //matrix2.print();
+        //matrix1.print();//(1)
+        //matrix2.print();//(1)
         //matrix3.print();
         //matrix.print();
 
@@ -129,6 +131,7 @@ public class Main {
         m.print();
     */
 
+    /*
         //Step9.Методи, що перетворюють матрицю в нижню та верхню трикутну. (створюють нові матриці для Immutable)
         double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
         ImmutableMatrix matrix1 = new ImmutableMatrix(data);
@@ -137,6 +140,30 @@ public class Main {
         matrix1.print();
         matrix2.print();
         matrix3.print();
+     */
+        //New
+        /*//setElement
+        double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
+        ImmutableMatrix matrix = new ImmutableMatrix(data);
+        ImmutableMatrix newMatrix = matrix.setElement(0, 0, 900.0);
+        //fillWithData
+               double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
+               ImmutableMatrix matrix = new ImmutableMatrix(data);
+               double[][] newData2 = {{11.0, 12.0, 13.0}, {14.0, 15.0, 16.0}, {17.0, 18.0, 19.0}};
+        ImmutableMatrix newMatrix = matrix.fillWithData(newData2);
+        */
+        //manualFill_autofill
+        //ImmutableMatrix matrix = new ImmutableMatrix(2, 2);
+
+        // Створення нової матриці викликом методу manual\auto
+        //ImmutableMatrix newMatrix = matrix.manualFill(); // or autoFill();
+
+        // Перевірка вмісту матриць оригінальної та нової після заповнення значеннями (для setElement, fillWithData, manualFill, autoFill)
+
+        //matrix.print();
+        //newMatrix.print();
+
+
 
     }
 
