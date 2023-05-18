@@ -65,15 +65,25 @@ public class Matrix {
     }
 
     //Метод ручного заповнення матриці
+
+
     public void manualFill() {
+        double[][] inputData = getUserInput();
+        fillWithData(inputData);
+    }
+
+    private double[][] getUserInput() {
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        double[][] inputData = new double[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 System.out.println("Будь ласка, введіть [" + i + "; " + j + "] елемент");
-                data[i][j] = sc.nextDouble();
+                inputData[i][j] = sc.nextDouble();
             }
         }
+        return inputData;
     }
+
 
     // Метод для отримання даних матриці у вагляді масиву
     public double[][] getData() {
