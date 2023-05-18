@@ -141,7 +141,7 @@ public class Main {
         matrix2.print();
         matrix3.print();
      */
-        //New
+
         /*//setElement
         double[][] data = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
         ImmutableMatrix matrix = new ImmutableMatrix(data);
@@ -153,15 +153,15 @@ public class Main {
         ImmutableMatrix newMatrix = matrix.fillWithData(newData2);
         */
         //manualFill_autofill
-        //ImmutableMatrix matrix = new ImmutableMatrix(2, 2);
+        ImmutableMatrix matrix = new ImmutableMatrix(2, 2);
 
         // Створення нової матриці викликом методу manual\auto
-        //ImmutableMatrix newMatrix = matrix.manualFill(); // or autoFill();
+        ImmutableMatrix newMatrix = matrix.manualFill(); // or autoFill();
 
         // Перевірка вмісту матриць оригінальної та нової після заповнення значеннями (для setElement, fillWithData, manualFill, autoFill)
 
-        //matrix.print();
-        //newMatrix.print();
+        matrix.print();
+        newMatrix.print();
 
 
 
