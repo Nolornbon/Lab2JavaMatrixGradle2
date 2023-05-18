@@ -1,5 +1,6 @@
 package org.example;
 
+
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
@@ -75,7 +76,7 @@ public class ImmutableMatrix {
     public int getCols() {
         return cols;
     }
-    
+
     //Метод заповнення матриці значеннями з двовимірного масиву - створення нової матриці на базі незмінної
     public ImmutableMatrix fillWithData(double[][] newData) {
         if (newData.length == rows && newData[0].length == cols) {
@@ -117,17 +118,21 @@ public class ImmutableMatrix {
 
     //Метод ручного заповнення матриці- створення нової матриці на базі незмінної
     public ImmutableMatrix manualFill() {
-        double[][] newData = new double[rows][cols];
-        Scanner sc=new Scanner(System.in).useLocale(Locale.US);
-        for(int i=0;i<rows;i++){
-            for (int j=0;j<cols;j++){
-                System.out.println("Будь ласка, введіть ["+i+"; "+j+"] елемент");
-                newData[i][j]=sc.nextDouble();
-            }
-        }
+        double[][] newData = getUserInput();
         return new ImmutableMatrix(newData);
     }
 
+    private double[][] getUserInput() {
+        double[][] newData = new double[rows][cols];
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.println("Будь ласка, введіть [" + i + "; " + j + "] елемент");
+                newData[i][j] = sc.nextDouble();
+            }
+        }
+        return newData;
+    }
     // Метод, що повертає значення заданого елемента матриці
 
     public double getElement(int row, int col) {
@@ -202,7 +207,7 @@ public class ImmutableMatrix {
             System.out.println("Пуста матриця");
         }
     }
-    //Метод для створення діагональнлї матриці (на основі задано вектора)
+    //Метод для створення діагональної матриці (на основі задано вектора)
     public static ImmutableMatrix diagonalMatrix(double[] vector) {
         Matrix matrix = Matrix.diagonalMatrix(vector);
         return new ImmutableMatrix(matrix);
